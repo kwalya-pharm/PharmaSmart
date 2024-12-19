@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaSmart - Your Trusted Pharmacy Partner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pharm.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #f1c40f;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #007bff;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background-image: url('drug.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+        }
+
+        .service {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 1rem;
+        }
+
+        .service img {
+            max-width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 10px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-right: 2rem;
+        }
+
+        .profile div {
+            max-width: 70%;
+        }
+
+        .toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        .toggle button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toggle button:hover {
+            background: #218838;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+            overflow-y: auto;
+            max-height: 80vh;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-content button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background: #218838;
+        }
+
+        .modal-content .policy-text {
+            max-height: 60vh;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h2>Welcome to PharmaSmart</h2>
+                    <div class="policy-text">
+                        <h3>Privacy Policy</h3>
+                        <p>We value your privacy and are committed to protecting your personal data. This privacy policy outlines how we collect, use, and protect your information.</p>
+                        <p><strong>Data Collection:</strong> We collect personal details such as name, contact information, and payment details only for processing orders and offering services.</p>
+                        <p><strong>Data Usage:</strong> Your data is used solely for processing your transactions and providing better services, including updates on orders and promotions.</p>
+                        <p><strong>Data Protection:</strong> We implement security measures to safeguard your data from unauthorized access, alteration, or misuse.</p>
+                    </div>
+                    <div class="policy-text">
+                        <h3>Terms of Service</h3>
+                        <p>By using PharmaSmart, you agree to abide by our terms of service. These terms govern your use of the website and our services.</p>
+                        <p><strong>Services Provided:</strong> We offer pharmaceutical services including the sale of medications, consultations, and home delivery.</p>
+                        <p><strong>User Responsibilities:</strong> Users are expected to provide accurate information when placing orders and adhere to all applicable laws while using our services.</p>
+                        <p><strong>Limitation of Liability:</strong> PharmaSmart is not liable for any misuse of the services or products provided. By agreeing, you accept responsibility for ensuring the accuracy of the information you provide.</p>
+                    </div>
+                    <button onclick="acceptPolicy()">I Agree</button>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        };
+
+        function acceptPolicy() {
+            document.querySelector('.modal').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>PharmaSmart</h1>
+        <p>Your Trusted Pharmacy Partner</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#order">Order Now</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-service">Terms of Service</a>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Quality Medications, Delivered Safely</h1>
+            <p>PharmaSmart is your one-stop solution for all your pharmaceutical needs.</p>
+            <button onclick="window.location.href='#order'">Order Now</button>
+        </div>
+    </section>
+
+    <section class="profile">
+        <img src="morgan.jpg" alt="Morgan Kwalya">
+        <div>
+            <h2>About Our CEO</h2>
+            <p>Morgan Kwalya, a visionary leader and dedicated pharmacist, ensures that PharmaSmart delivers unparalleled service and quality care to all our clients. With a background in pharmaceutical innovation and a commitment to excellence, Morgan leads our team in redefining healthcare delivery.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="service">
+            <img src="cart.jpg" alt="Delivery">
+            <h3>Home Delivery</h3>
+            <p>Fast and reliable delivery services for all your prescriptions.</p>
+        </div>
+        <div class="service">
+            <img src="order.jpg" alt="Orders">
+            <h3>Online Orders</h3>
+            <p>Convenient online ordering for over-the-counter and prescription medications.</p>
+        </div>
+        <div class="service">
+            <img src="phm.jpg" alt="Consultation">
+            <h3>Pharmacist Consultation</h3>
+            <p>Speak with our licensed pharmacists for professional advice.</p>
+        </div>
+    </section>
+
+    <section class="toggle">
+        <button onclick="alert('Schedule a consultation with our pharmacists today!')">Schedule Consultation</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PharmaSmart. All rights reserved. Operated by Morgan Kwalya, CEO. Governed by the Pharmacy and Poisons Board.</p>
+        <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a> | Call: 0748052811</p>
+        <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a></p>
+    </footer>
+</body>
+
+</html>
