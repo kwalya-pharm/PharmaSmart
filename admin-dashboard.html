@@ -6,11 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - PharmaSmart</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        header a {
+            color: #f1c40f;
+            font-size: 1.2rem;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .dashboard-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .dashboard-section h2 {
+            color: #16a085;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dashboard-section li {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .dashboard-section a {
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dashboard-section a:hover {
+            color: #16a085;
+            transform: translateX(5px);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <h1>Admin Dashboard</h1>
+        <a href="index.html">Back to Home</a> <!-- Added link to home page -->
     </header>
 
     <section class="dashboard-section">
