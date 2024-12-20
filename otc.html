@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTC Medications - PharmaSmart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pharm.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            color: #f1c40f;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        .cart {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: white;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            margin-right: 5px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #007bff;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        .category {
+            margin-bottom: 2rem;
+        }
+
+        .category h2 {
+            background-color: #28a745; /* Green background */
+            color: white; /* White text */
+            padding: 0.5rem 1rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .drug {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .drug button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .drug button:hover {
+            background: #218838;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+        .drug:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .intro-text {
+            background-color: #fff3cd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            color: #856404;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>OTC Medications</h1>
+        <p>Browse and order over-the-counter drugs with ease</p>
+        <div class="cart" id="cart">
+            <span class="cart-icon">🛒</span> <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="prescription.html">Submit Prescription</a>
+        <a href="medical.html">Submit Medical File</a>
+        <a href="otc.html">OTC Medications</a>
+        <a href="login-patient.html">Patient Login</a>
+        <a href="login-admin.html">Admin Login</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="intro-text">
+            <p>Explore our wide range of over-the-counter (OTC) medications. Simply click 'Add to Cart' to purchase or learn more.</p>
+            <p><a href="index.html" style="color: #007bff; text-decoration: underline;">Return to Main Page</a></p>
+        </div>
+
+        <!-- Pain Relievers -->
+        <div class="category">
+            <h2>Pain Relievers (Analgesics)</h2>
+            <div class="drug">
+                <span>Acetaminophen (Tylenol)</span>
+                <button onclick="addToCart('Acetaminophen')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Ibuprofen (Advil, Motrin)</span>
+                <button onclick="addToCart('Ibuprofen')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Naproxen (Aleve)</span>
+                <button onclick="addToCart('Naproxen')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Aspirin (Bayer)</span>
+                <button onclick="addToCart('Aspirin')">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Anti-inflammatory Medications -->
+        <div class="category">
+            <h2>Anti-inflammatory Medications</h2>
+            <div class="drug">
+                <span>Ibuprofen (Advil, Motrin)</span>
+                <button onclick="addToCart('Ibuprofen')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Naproxen (Aleve)</span>
+                <button onclick="addToCart('Naproxen')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Aspirin (Bayer)</span>
+                <button onclick="addToCart('Aspirin')">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Antihistamines -->
+        <div class="category">
+            <h2>Antihistamines (For Allergies)</h2>
+            <div class="drug">
+                <span>Diphenhydramine (Benadryl)</span>
+                <button onclick="addToCart('Diphenhydramine')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Loratadine (Claritin)</span>
+                <button onclick="addToCart('Loratadine')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Cetirizine (Zyrtec)</span>
+                <button onclick="addToCart('Cetirizine')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Fexofenadine (Allegra)</span>
+                <button onclick="addToCart('Fexofenadine')">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Decongestants -->
+        <div class="category">
+            <h2>Decongestants (For Nasal Congestion)</h2>
+            <div class="drug">
+                <span>Pseudoephedrine (Sudafed)</span>
+                <button onclick="addToCart('Pseudoephedrine')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Phenylephrine (Sudafed PE)</span>
+                <button onclick="addToCart('Phenylephrine')">Add to Cart</button>
+            </div>
+            <div class="drug">
+                <span>Oxymetazoline (Afrin)</span>
+                <button onclick="addToCart('Oxymetazoline')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PharmaSmart. All rights reserved. Operated by Morgan Kwalya, CEO. Governed by the Pharmacy and Poisons Board.</p>
+        <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a> | Call: 0748052811</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart(drugName) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            alert(drugName + ' has been added to your cart!');
+        }
+    </script>
+</body>
+
+</html>
