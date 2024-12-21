@@ -22,11 +22,22 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
             color: #f1c40f;
             font-family: 'Lucida Sans', sans-serif;
+            margin-left: 80px;
+        }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
         }
 
         nav {
@@ -203,6 +214,7 @@
     </div>
 
     <header>
+        <img src="logo.jpg" alt="PharmaSmart Logo">
         <h1>PharmaSmart</h1>
         <p>Your Trusted Pharmacy Partner</p>
     </header>
@@ -215,6 +227,7 @@
         <a href="otc.html">OTC Medications</a>
         <a href="login-patient.html">Patient Login</a>
         <a href="login-admin.html">Admin Login</a>
+        <a href="educate.html">Pharmacy Education</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -241,6 +254,11 @@
             <h2>OTC Medications</h2>
             <p>Shop for over-the-counter drugs conveniently.</p>
             <button onclick="window.location.href='otc.html'">Browse OTC</button>
+        </div>
+        <div class="feature">
+            <h2>Pharmacy Education</h2>
+            <p>Before taking medications, kindly review the educational information shared here.</p>
+            <button onclick="window.location.href='educate.html'">Learn More</button>
         </div>
         <div class="feature">
             <h2>Login</h2>
