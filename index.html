@@ -31,6 +31,7 @@
 
         nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             background-color: #007bff;
             padding: 0.5rem 0;
@@ -39,7 +40,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             padding: 0.5rem;
         }
 
@@ -59,19 +60,36 @@
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-align: center;
+            padding: 1rem;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
             color: white;
             font-family: 'Comic Sans MS', cursive, sans-serif;
         }
 
+        .hero button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero button:hover {
+            background: #218838;
+        }
+
         .features {
             display: flex;
-            justify-content: space-around;
-            padding: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem 1rem;
+            gap: 1rem;
         }
 
         .feature {
@@ -80,8 +98,8 @@
             padding: 1rem;
             text-align: center;
             border-radius: 10px;
-            flex: 1;
-            margin: 0 1rem;
+            flex: 1 1 calc(100% - 2rem);
+            max-width: 300px;
         }
 
         .feature button {
@@ -108,10 +126,82 @@
             color: #28a745;
             text-decoration: none;
         }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero {
+                height: 40vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                max-width: 90%;
+            }
+        }
+
+        /* Privacy Policy Pop-up Styles */
+        #privacy-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #privacy-popup div {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #privacy-popup h2 {
+            margin-bottom: 1rem;
+        }
+
+        #privacy-popup button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #privacy-popup button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 
 <body>
+    <div id="privacy-popup">
+        <div>
+            <h2>Privacy Policy Agreement</h2>
+            <p>We value your privacy. Please read and accept our <a href="privacy.html" target="_blank">Privacy Policy</a> to continue using our site.</p>
+            <button id="accept-privacy">Accept</button>
+        </div>
+    </div>
+
     <header>
         <h1>PharmaSmart</h1>
         <p>Your Trusted Pharmacy Partner</p>
@@ -164,6 +254,23 @@
         <p>&copy; 2024 PharmaSmart. All rights reserved. Operated by Morgan Kwalya, CEO. Governed by the Pharmacy and Poisons Board.</p>
         <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a> | Call: 0748052811</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const privacyPopup = document.getElementById('privacy-popup');
+            const acceptButton = document.getElementById('accept-privacy');
+
+            // Check if the user has already accepted the privacy policy
+            if (!localStorage.getItem('privacyAccepted')) {
+                privacyPopup.style.display = 'flex';
+            }
+
+            acceptButton.addEventListener('click', function () {
+                localStorage.setItem('privacyAccepted', 'true');
+                privacyPopup.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>
