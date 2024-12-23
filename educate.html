@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PharmaSmart - Medication Guide</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <title>PharmaSmart - Comprehensive Medication Guide</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,17 +25,17 @@
             align-items: center;
         }
 
-        header h1 {
-            color: #f1c40f;
-            font-family: 'Lucida Sans', sans-serif;
-            margin-left: 20px; /* Space between logo and text */
-        }
-
-        .logo {
+        header img {
             height: 70px;
             width: 70px;
-            border-radius: 50%; /* Makes the logo circular */
+            border-radius: 50%;
             object-fit: cover;
+        }
+
+        header h1 {
+            margin-left: 20px;
+            color: #f1c40f;
+            font-family: 'Lucida Sans', sans-serif;
         }
 
         nav {
@@ -59,9 +57,9 @@
             border-radius: 5px;
         }
 
-        .content {
+        .container {
             padding: 2rem;
-            background-color: white; /* Solid white background */
+            background-color: white;
             border-radius: 10px;
             margin: 1rem auto;
             max-width: 800px;
@@ -70,6 +68,14 @@
 
         h2 {
             color: #6a11cb;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
         }
 
         footer {
@@ -83,15 +89,32 @@
             color: #28a745;
             text-decoration: none;
         }
+
+        .return-button {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .return-button a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #6a11cb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .return-button a:hover {
+            background-color: #5b0fb2;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="logo.jpg" alt="PharmaSmart Logo" class="logo">
-            <h1>PharmaSmart</h1>
-        </div>
+        <img src="logo.jpg" alt="PharmaSmart Logo">
+        <h1>PharmaSmart - Comprehensive Medication Guide</h1>
     </header>
 
     <nav>
@@ -100,49 +123,75 @@
         <a href="contact.html">Contact Us</a>
     </nav>
 
-    <main class="content">
-        <h2>Understanding Medications: What You Need to Know</h2>
-        <p>Taking the right medicines is important to stay healthy, especially if you are pregnant or living with conditions like HIV or diabetes. This guide will help you understand which medicines are safe, how to take them correctly, and the dangers of misusing drugs.</p>
+    <div class="container">
+        <div>
+            <h2>Understanding Medications: What You Need to Know</h2>
+            <p>Taking the right medicines is important to stay healthy, especially if you are pregnant or living with conditions like HIV or diabetes. This guide will help you understand which medicines are safe, how to take them correctly, and the dangers of misusing drugs.</p>
+        </div>
 
-        <h3>Safe Medicines for Pregnant Women</h3>
-        <ul>
-            <li><b>Vitamins:</b> Folic acid and iron are essential for a healthy pregnancy.</li>
-            <li><b>For Heartburn:</b> Calcium carbonate is safe for use.</li>
-            <li><b>For Pain:</b> Paracetamol is generally safe when used correctly.</li>
-            <li><b>Infections:</b> Certain antibiotics like amoxicillin can be used safely.</li>
-        </ul>
+        <div>
+            <h2>1. Malaria</h2>
+            <p><strong>What is it?</strong> Malaria is caused by a parasite transmitted through mosquito bites. Common symptoms include fever, chills, headache, and body aches.</p>
+            <p><strong>Medication:</strong>
+            <ul>
+                <li><strong>Artemether-Lumefantrine (AL):</strong> Take as prescribed by your doctor, usually twice daily for 3 days. Always complete the dose even if you feel better.</li>
+                <li><strong>Prevention:</strong> Sleep under treated mosquito nets, use insect repellents, and avoid stagnant water near your home.</li>
+            </ul>
+            </p>
+        </div>
 
-        <h3>Medicines for HIV</h3>
-        <ul>
-            <li><b>ARVs:</b> Medicines like tenofovir, lamivudine, and dolutegravir (TLD) help control the virus and are safe during pregnancy.</li>
-            <li><b>Prevention:</b> ARVs can prevent passing the virus to babies during pregnancy or breastfeeding.</li>
-        </ul>
+        <div>
+            <h2>2. Typhoid Fever</h2>
+            <p><strong>What is it?</strong> Typhoid is a bacterial infection spread through contaminated food or water. Symptoms include fever, stomach pain, and diarrhea or constipation.</p>
+            <p><strong>Medication:</strong>
+            <ul>
+                <li><strong>Cefixime:</strong> A common antibiotic. Take as prescribed for 7-10 days.</li>
+                <li><strong>Hydration:</strong> Drink plenty of clean water to stay hydrated.</li>
+                <li><strong>Prevention:</strong> Ensure food is well-cooked and water is boiled or treated.</li>
+            </ul>
+            </p>
+        </div>
 
-        <h3>Managing Diabetes</h3>
-        <ul>
-            <li><b>Medicines:</b> Insulin and metformin help control blood sugar safely, even during pregnancy.</li>
-            <li><b>Lifestyle:</b> Healthy eating and exercise support blood sugar control.</li>
-        </ul>
+        <div>
+            <h2>3. Respiratory Infections</h2>
+            <p><strong>What is it?</strong> These are caused by viruses or bacteria and may include symptoms like cough, runny nose, sore throat, and fever.</p>
+            <p><strong>Medication:</strong>
+            <ul>
+                <li><strong>Paracetamol:</strong> For fever and pain. Take 500mg every 6 hours if needed.</li>
+                <li><strong>Steam inhalation:</strong> Helps relieve congestion. Use a bowl of hot water and cover your head with a towel.</li>
+                <li><strong>Fluids:</strong> Stay hydrated with warm drinks and soups.</li>
+            </ul>
+            </p>
+        </div>
 
-        <h3>Prescription Medicines</h3>
-        <ul>
-            <li><b>Antibiotics:</b> Use only as prescribed to avoid resistance.</li>
-            <li><b>Painkillers:</b> Strong medicines like morphine require strict medical supervision.</li>
-        </ul>
+        <div>
+            <h2>4. Diarrhea</h2>
+            <p><strong>What is it?</strong> Diarrhea can be caused by infections, food poisoning, or contaminated water. Symptoms include loose stools and dehydration.</p>
+            <p><strong>Medication:</strong>
+            <ul>
+                <li><strong>Oral Rehydration Salts (ORS):</strong> Mix with clean water and drink frequently to prevent dehydration.</li>
+                <li><strong>Zinc Tablets:</strong> Recommended for children to reduce the severity of diarrhea.</li>
+                <li><strong>Prevention:</strong> Wash hands before eating and after using the toilet, and ensure food is clean and safe.</li>
+            </ul>
+            </p>
+        </div>
 
-        <h3>Fighting Antibiotic Resistance</h3>
-        <ul>
-            <li>Finish all prescribed antibiotics, even if you feel better.</li>
-            <li>Avoid buying antibiotics without a prescription.</li>
-        </ul>
+        <div>
+            <h2>Family Planning Services</h2>
+            <p><strong>What is it?</strong> Family planning helps you decide if and when to have children. It involves different methods to prevent pregnancy and plan your family size.</p>
+            <p><strong>Methods:</strong>
+            <ul>
+                <li><strong>Contraceptive Pills:</strong> Effective but must be used consistently. Manage side effects by consulting a doctor.</li>
+                <li><strong>Injections:</strong> Long-lasting and discreet. Discuss concerns with a provider.</li>
+                <li><strong>Implants and IUDs:</strong> Long-term options. May cause minor side effects initially.</li>
+            </ul>
+            </p>
+        </div>
 
-        <h3>How Pharmacists and Doctors Can Help</h3>
-        <p>Always consult a pharmacist or doctor if you are unsure about any medicine. Following their advice ensures your safety and the effectiveness of treatments.</p>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2024 PharmaSmart. All rights reserved.</p>
-        <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a></p>
+        <p>&copy; 2024 PharmaSmart. All rights reserved. Contact us: <a href="mailto:info@pharmasmart.com">info@pharmasmart.com</a></p>
     </footer>
 </body>
 
