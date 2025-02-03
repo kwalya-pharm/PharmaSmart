@@ -1,308 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PharmaSmart - Your Trusted Pharmacy Partner</title>
+    <title>PharmaSmart | Welcome</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('pharm.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(90deg, #6a11cb, #2575fc);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centers logo and text */
-        }
-
-        header h1 {
-            color: #f1c40f;
-            font-family: 'Lucida Sans', sans-serif;
-            margin-top: 20px; /* Adds space between the logo and the title */
-        }
-
-        header p {
-            color: #fff;
-            margin-top: 10px; /* Adds space between the title and the subheading */
-            font-size: 1.2rem;
-        }
-
-        header img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin-top: 10px; /* Adjusted spacing between logo and title */
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            background-color: #007bff;
-            padding: 0.5rem 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem;
-        }
-
-        nav a:hover {
-            background-color: #0056b3;
-            border-radius: 5px;
-        }
-
-        .hero {
-            background-image: url('drug.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            color: white;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-
-        .hero button {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .hero button:hover {
-            background: #218838;
-        }
-
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 2rem 1rem;
-            gap: 1rem;
-        }
-
-        .feature {
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            text-align: center;
-            border-radius: 10px;
-            flex: 1 1 calc(100% - 2rem);
-            max-width: 300px;
-        }
-
-        .feature button {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .feature button:hover {
-            background: #218838;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        footer a {
-            color: #28a745;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero {
-                height: 40vh;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature {
-                max-width: 90%;
-            }
-        }
-
-        /* Privacy Policy Pop-up Styles */
-        #privacy-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        #privacy-popup div {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 500px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        #privacy-popup h2 {
-            margin-bottom: 1rem;
-        }
-
-        #privacy-popup button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #privacy-popup button:hover {
-            background-color: #218838;
-        }
-    </style>
 </head>
-
 <body>
-    <div id="privacy-popup">
-        <div>
-            <h2>Privacy Policy Agreement</h2>
-            <p>We value your privacy. Please read and accept our <a href="privacy.html" target="_blank">Privacy Policy</a> to continue using our site.</p>
-            <button id="accept-privacy">Accept</button>
-        </div>
-    </div>
-
     <header>
-        <img src="logo.jpg" alt="PharmaSmart Logo">
-        <h1>PharmaSmart</h1>
-        <p>Your Trusted Pharmacy Partner</p>
+        <h1>Welcome to PharmaSmart</h1>
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">Meet Our Team</a>
-        <a href="otc.html">OTC Medications</a>
-        <a href="login-patient.html">Patient Login</a>
-        <a href="login-admin.html">Admin Login</a>
-        <a href="educate.html">Health blog</a>
-        <a href="#contact">Contact</a>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 
     <section class="hero">
         <div>
-            <h1>Quality Medications, Delivered Safely</h1>
-            <p>PharmaSmart is your one-stop solution for all your pharmaceutical needs.</p>
-            <button onclick="window.location.href='login-patient.html'">Order Now</button>
+            <h1>Empowering Pharmacy Through Innovation</h1>
+            <p>Your trusted platform for smart pharmaceutical solutions.</p>
+            <button class="learn-more">Learn More</button>
         </div>
     </section>
 
-    <section class="features">
-        <div class="feature">
-            <h2>Live Chat Support</h2>
-            <p>Get real-time assistance for your queries about medications, prescriptions, or delivery.</p>
-            <button onclick="window.location.href='live-chat.html'">Chat Now</button>
-        </div>
-        <div class="feature">
-            <h2>Order Tracking</h2>
-            <p>Monitor the status of your medication orders in real-time.</p>
-            <button onclick="window.location.href='order-tracking.html'">Track Orders</button>
-        </div>
-        <div class="feature">
-            <h2>User Reviews and Ratings</h2>
-            <p>Share your feedback and help us improve.</p>
-            <button onclick="window.location.href='survey.html'">Leave a Review</button>
-        </div>
-        <div class="feature">
-            <h2>Health Blog</h2>
-            <p>Stay informed with tips and advice for a healthier life including a guide to family planning.</p>
-            <button onclick="window.location.href='educate.html'">Read Articles</button>
-        </div>
-        <div class="feature">
-            <h2>Medication Reminders</h2>
-            <p>Never miss a dose with our reminder service.</p>
-            <button onclick="window.location.href='reminders.html'">Set Reminders</button>
-        </div>
-        <div class="feature">
-            <h2>Telepharmacy</h2>
-            <p>Consult with pharmacists virtually for expert advice.</p>
-            <button onclick="window.location.href='telepharmacy.html'">Consult Now</button>
-        </div>
-        <div class="feature">
-            <h2>Subscription Services</h2>
-            <p>Save on your regular medications with subscription plans.</p>
-            <button onclick="window.location.href='subscriptions.html'">Subscribe</button>
-        </div>
+    <section class="about">
+        <h2>What We Do</h2>
+        <p>PharmaSmart is dedicated to revolutionizing the pharmacy sector through technology-driven solutions. 
+            Our platform bridges the gap between professionals, students, and stakeholders in the healthcare space, 
+            ensuring seamless access to knowledge, research, and career opportunities.</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 PharmaSmart. All rights reserved. Operated by Morgan Kwalya, CEO. Governed by the Pharmacy and Poisons Board.</p>
-        <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a> | Call: 0748052811</p>
+        <p>© 2025 PharmaSmart. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const privacyPopup = document.getElementById('privacy-popup');
-            const acceptButton = document.getElementById('accept-privacy');
-
-            // Check if the user has already accepted the privacy policy
-            if (!localStorage.getItem('privacyAccepted')) {
-                privacyPopup.style.display = 'flex';
-            }
-
-            acceptButton.addEventListener('click', function () {
-                localStorage.setItem('privacyAccepted', 'true');
-                privacyPopup.style.display = 'none';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
