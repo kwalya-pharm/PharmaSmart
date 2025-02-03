@@ -4,26 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Dashboard - PharmaSmart</title>
+    <title>PharmaSmart - Your Trusted Pharmacy Partner</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 
 <body>
+    <div id="privacy-popup">
+        <div>
+            <h2>Privacy Policy Agreement</h2>
+            <p>We value your privacy. Please read and accept our <a href="privacy.html" target="_blank">Privacy Policy</a> to continue using our site.</p>
+            <button id="accept-privacy">Accept</button>
+        </div>
+    </div>
+
     <header>
-        <h1>Patient Dashboard</h1>
+        <img src="logo.jpg" alt="PharmaSmart Logo">
+        <h1>PharmaSmart</h1>
+        <p>Your Trusted Pharmacy Partner</p>
     </header>
 
-    <section class="dashboard-section">
-        <h2>What would you like to do?</h2>
-        <ul>
-            <li><a href="prescription.html">Upload Prescription</a></li>
-            <li><a href="medical.html">Upload Medical File</a></li>
-            <li><a href="survey.html">Service Feedback</a></li>
-        </ul>
+    <nav>
+        <a href="otc.html">OTC Medications</a>
+        <a href="educate.html">Health Blog</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="prescriptions.html">Prescriptions</a>
+        <a href="login-patient.html">Patient Login</a>
+        <a href="login-admin.html">Admin Login</a>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h1>Quality Medications, Delivered Safely</h1>
+            <p>PharmaSmart is your one-stop solution for all your pharmaceutical needs.</p>
+            <button onclick="window.location.href='login-patient.html'">Order Now</button>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 PharmaSmart. All rights reserved.</p>
+        <p>&copy; 2025 PharmaSmart. All rights reserved. Operated by Morgan Kwalya, CEO. Governed by the Pharmacy and Poisons Board.</p>
+        <p>Contact us: <a href="mailto:kwalyamorgan042@gmail.com">kwalyamorgan042@gmail.com</a> | Call: 0748052811</p>
     </footer>
 </body>
 
