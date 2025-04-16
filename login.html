@@ -10,21 +10,123 @@
 
 <body>
     <header>
-        <h1>Patient Login</h1>
+        <h1>PharmaSmart Patient Portal</h1>
     </header>
 
-    <section class="login-section">
+    <!-- Login Section -->
+    <section class="auth-section" id="login-section">
         <h2>Login to Access Services</h2>
-        <form action="dashboard.html" method="POST">
+        <form id="login-form">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="toggleAuth('register')">Register here</a></p>
+    </section>
+
+    <!-- Register Section (Initially Hidden) -->
+    <section class="auth-section" id="register-section" style="display: none;">
+        <h2>Register to Create an Account</h2>
+        <form id="register-form">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="javascript:void(0);" onclick="toggleAuth('login')">Login here</a></p>
     </section>
 
     <footer>
         <p>&copy; 2024 PharmaSmart. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Function to toggle between login and register forms
+        function toggleAuth(type) {
+            const loginSection = document.getElementById('login-section');
+            const registerSection = document.getElementById('register-section');
+
+            if (type === 'register') {
+                loginSection.style.display = 'none';
+                registerSection.style.display = 'block';
+            } else {
+                loginSection.style.display = 'block';
+                registerSection.style.display = 'none';
+            }
+        }
+
+    function toggleAuth(type) {
+        const loginSection = document.getElementById('login-section');
+        const registerSection = document.getElementById('register-section');
+        loginSection.style.display = type === 'login' ? 'block' : 'none';
+        registerSection.style.display = type === 'register' ? 'block' : 'none';
+    }
+
+    async function handleFetchResponse(response) {
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+            const result = await response.json();
+            return { result, isJSON: true };
+        } else {
+            const text = await response.text();
+            console.warn('Unexpected response:', text);
+            return { result: { message: 'Unexpected server response' }, isJSON: false };
+        }
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const username = document.querySelector('#login-form input[name="username"]').value;
+        const password = document.querySelector('#login-form input[name="password"]').value;
+
+        try {
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const { result } = await handleFetchResponse(response);
+
+            if (response.ok) {
+                window.location.href = 'patient-dashboard.html';
+            } else {
+                alert(result.message || 'Login failed. Please try again.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('An error occurred. Please try again.');
+        }
+    });
+
+    document.getElementById('register-form').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const username = document.querySelector('#register-form input[name="username"]').value;
+        const password = document.querySelector('#register-form input[name="password"]').value;
+
+        try {
+            const response = await fetch('http://localhost:5000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const { result } = await handleFetchResponse(response);
+
+            if (response.ok) {
+                alert('Registration successful!');
+                toggleAuth('login');
+            } else {
+                alert(result.message || 'Registration failed. Please try again.');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('An error occurred. Please try again.');
+        }
+    });
+</script>
+
 </body>
 
 </html>

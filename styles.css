@@ -37,32 +37,50 @@ nav a:hover {
     color: #002855;
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 40, 85, 0.8), rgba(0, 40, 85, 0.8)), url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
+/* Hero + Video Background Sections */
+.hero, .video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    justify-content: center;
+    color: white;
+    text-align: center;
 }
 
-.hero h1 {
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
-.hero button {
+.hero-content .learn-more {
     background: #007bff;
     color: white;
     border: none;
@@ -73,7 +91,7 @@ nav a:hover {
     transition: background 0.3s;
 }
 
-.hero button:hover {
+.hero-content .learn-more:hover {
     background: #0056b3;
 }
 
@@ -99,6 +117,67 @@ nav a:hover {
     margin: auto;
 }
 
+/* Features Section */
+.features {
+    background: #001f3f;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2rem auto;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Call to Action */
+.cta {
+    background: #004080;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta .login-btn {
+    display: inline-block;
+    background-color: white;
+    color: #002855;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.cta .login-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
 /* Footer */
 footer {
     background: #001f3f;
@@ -111,4 +190,16 @@ footer {
 .fade-in {
     opacity: 1 !important;
     transform: translateY(0) !important;
+}
+/* Initial state: hidden and slightly moved down */
+.about, .features, .cta, .video-section, .hero {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Fade-in state: visible and in place */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
 }
